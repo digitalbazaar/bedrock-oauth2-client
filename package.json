@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-module-template-http",
   "dependencies": {
+    "@digitalbazaar/http-client": "^1.2.0",
+    "bedrock-mongodb": "^8.3.0",
     "esm": "^3.2.25"
   },
   "peerDependencies": {
@@ -37,6 +39,6 @@
     "eslint-config-digitalbazaar": "^2.6.1"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   }
 }
