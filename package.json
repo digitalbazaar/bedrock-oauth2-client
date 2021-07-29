@@ -1,14 +1,14 @@
 {
-  "name": "bedrock-module-template-http",
+  "name": "bedrock-oauth2-client",
   "version": "0.0.1-0",
-  "description": "Bedrock HTTP API",
+  "description": "Bedrock OAuth2 Client",
   "main": "./lib",
   "scripts": {
     "lint": "eslint ."
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/digitalbazaar/bedrock-module-template-http"
+    "url": "https://github.com/digitalbazaar/bedrock-oauth2-client"
   },
   "keywords": [
     "bedrock"
@@ -19,9 +19,9 @@
     "url": "https://digitalbazaar.com"
   },
   "bugs": {
-    "url": "https://github.com/digitalbazaar/bedrock-module-template-http/issues"
+    "url": "https://github.com/digitalbazaar/bedrock-oauth2-client/issues"
   },
-  "homepage": "https://github.com/digitalbazaar/bedrock-module-template-http",
+  "homepage": "https://github.com/digitalbazaar/bedrock-oauth2-client",
   "dependencies": {
     "@digitalbazaar/http-client": "^1.2.0",
     "bedrock-mongodb": "^8.3.0",
