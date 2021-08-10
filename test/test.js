@@ -6,7 +6,7 @@
 const bedrock = require('bedrock');
 require('bedrock-https-agent');
 require('bedrock-mongodb');
-require('bedrock-module-template-http');
+require('bedrock-oauth2-client');
 
 require('bedrock-test');
 bedrock.start();
