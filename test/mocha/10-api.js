@@ -21,7 +21,10 @@ describe('oauth2-client', () => {
     assertNoError(err);
     should.exist(result);
     result.should.have.property('meta');
-    result.token.should.eql(token);
+    result.token.client_id.should.eql(token.client_id);
+    result.token.client_secret.should.eql(token.client_secret);
+    result.token.access_token.should.eql(token.access_token);
+    result.token.should.have.property('expires');
   });
   it('should get am item from the database', async () => {
     const token = {
@@ -38,9 +41,10 @@ describe('oauth2-client', () => {
     }
     assertNoError(err);
     should.exist(result);
-    result.client_id.should.eql(token.client_id);
-    result.client_secret.should.eql(token.client_secret);
-    result.access_token.should.eql(token.access_token);
-    result.should.have.property('expires');
+    result.should.have.property('meta');
+    result.token.client_id.should.eql(token.client_id);
+    result.token.client_secret.should.eql(token.client_secret);
+    result.token.access_token.should.eql(token.access_token);
+    result.token.should.have.property('expires');
   });
 });
