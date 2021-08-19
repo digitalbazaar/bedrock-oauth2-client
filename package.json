@@ -24,6 +24,7 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-oauth2-client",
   "dependencies": {
     "@digitalbazaar/http-client": "^1.2.0",
+    "@digitalbazaar/lru-memoize": "^2.1.0",
     "bedrock-mongodb": "^8.3.0",
     "esm": "^3.2.25"
   },
