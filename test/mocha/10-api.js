@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Digital Bazaar, Inc. All rights reserved.
  */
 
-const {get, insert} = require('bedrock-oauth2-client');
+const {storage} = require('bedrock-oauth2-client');
 
 describe('oauth2-client', () => {
   it('should insert an item into the database', async () => {
@@ -14,7 +14,7 @@ describe('oauth2-client', () => {
     let result;
     let err;
     try {
-      result = await insert({token});
+      result = await storage.insert({token});
     } catch(e) {
       err = e;
     }
@@ -35,7 +35,7 @@ describe('oauth2-client', () => {
     let result;
     let err;
     try {
-      result = await get({client_id: token.client_id});
+      result = await storage.get({client_id: token.client_id});
     } catch(e) {
       err = e;
     }
