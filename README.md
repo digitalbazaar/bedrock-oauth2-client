@@ -1,1 +1,1 @@
-# bedrock-module-template-http
+# bedrock-oauth2-client
