@@ -1,5 +1,5 @@
 {
-  "name": "bedrock-module-template-http-test",
+  "name": "bedrock-oauth2-client-test",
   "version": "0.0.1-0",
   "private": true,
   "scripts": {
@@ -22,10 +22,10 @@
   "nyc": {
     "excludeNodeModules": false,
     "include": [
-      "node_modules/bedrock-module-template-http/**"
+      "node_modules/bedrock-oauth2-client-http/**"
     ],
     "exclude": [
-      "node_modules/bedrock-module-template-http/node_modules/**"
+      "node_modules/bedrock-oauth2-client-http/node_modules/**"
     ]
   }
 }
