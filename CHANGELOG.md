@@ -1,6 +1,6 @@
 # bedrock-oauth2-client ChangeLog
 
-## 1.1.0 - 2021-xx-xx
+## 1.1.0 - 2021-09-03
 
 ### Added
 - Added `checkError` export.
