@@ -2,7 +2,9 @@
  * Copyright (c) 2021 Digital Bazaar, Inc. All rights reserved.
  */
 
-const {storage, isInvalidAccessTokenError} = require('bedrock-oauth2-client');
+const {
+  storage, isInvalidAccessTokenError, isUnrecoverableError
+} = require('bedrock-oauth2-client');
 
 describe('oauth2-client', () => {
   it('should insert an item into the database', async () => {
@@ -48,17 +50,31 @@ describe('oauth2-client', () => {
     result.token.should.have.property('expires');
   });
   it('should return true if an error contains "invalid_token"', async () => {
-    const e = new Error('Invalid Token');
-    e.status = 401;
-    e.data = {error: 'invalid_token'};
-    const errorResult = isInvalidAccessTokenError({e});
+    const error = new Error('Invalid Token');
+    error.status = 401;
+    error.data = {error: 'invalid_token'};
+    const errorResult = isInvalidAccessTokenError({error});
     errorResult.should.eql(true);
   });
   it('should return false if an error status is not 401', async () => {
-    const e = new Error('Invalid Token');
-    e.status = 500;
-    e.data = {error: 'invalid_token'};
-    const errorResult = isInvalidAccessTokenError({e});
+    const error = new Error('Invalid Token');
+    error.status = 500;
+    error.data = {error: 'invalid_token'};
+    const errorResult = isInvalidAccessTokenError({error});
+    errorResult.should.eql(false);
+  });
+  it('should return true if an error is unrecoverable', async () => {
+    const error = new Error('Invalid Token');
+    error.status = 401;
+    error.data = {error: 'InvalidClient'};
+    const errorResult = isUnrecoverableError({error});
+    errorResult.should.eql(true);
+  });
+  it('should return false if an error is not unrecoverable', async () => {
+    const error = new Error('Invalid Token');
+    error.status = 401;
+    error.data = {error: 'invalid_token', name: 'ConstraintError'};
+    const errorResult = isUnrecoverableError({error});
     errorResult.should.eql(false);
   });
 });
