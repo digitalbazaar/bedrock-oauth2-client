@@ -6,7 +6,8 @@
 - **BREAKING**: Renamed `checkError` to `isInvalidAccessTokenError`.
 
 ### Added
-- Added tests for `isInvalidAccessTokenError`.
+- Added `isUnrecoverableError`.
+- Added tests for `isInvalidAccessTokenError` and `isUnrecoverableError`.
 
 ## 1.1.0 - 2021-09-03
 
