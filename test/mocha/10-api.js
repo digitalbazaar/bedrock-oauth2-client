@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Digital Bazaar, Inc. All rights reserved.
  */
 
-const {storage} = require('bedrock-oauth2-client');
+const {storage, isInvalidTokenError} = require('bedrock-oauth2-client');
 
 describe('oauth2-client', () => {
   it('should insert an item into the database', async () => {
@@ -46,5 +46,19 @@ describe('oauth2-client', () => {
     result.token.client_secret.should.eql(token.client_secret);
     result.token.access_token.should.eql(token.access_token);
     result.token.should.have.property('expires');
+  });
+  it('should return true if an error contains "invalid_token"', async () => {
+    const e = new Error('Invalid Token');
+    e.status = 401;
+    e.data = {error: 'invalid_token'};
+    const errorResult = isInvalidTokenError({e});
+    errorResult.should.eql(true);
+  });
+  it('should return false if an error status is not 401', async () => {
+    const e = new Error('Invalid Token');
+    e.status = 500;
+    e.data = {error: 'invalid_token'};
+    const errorResult = isInvalidTokenError({e});
+    errorResult.should.eql(false);
   });
 });
