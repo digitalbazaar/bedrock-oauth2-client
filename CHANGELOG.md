@@ -3,11 +3,10 @@
 ## 2.0.0 - 2021-09-03
 
 ### Changed
-- **BREAKING**: Renamed `checkError` to `isInvalidTokenError`.
+- **BREAKING**: Renamed `checkError` to `isInvalidAccessTokenError`.
 
 ### Added
-- Added tests for `isInvalidTokenError`.
-
+- Added tests for `isInvalidAccessTokenError`.
 
 ## 1.1.0 - 2021-09-03
 
