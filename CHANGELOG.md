@@ -1,6 +1,6 @@
 # bedrock-oauth2-client ChangeLog
 
-## 2.0.0 - 2021-09-03
+## 2.0.0 - 2021-09-09
 
 ### Changed
 - **BREAKING**: Renamed `checkError` to `isInvalidAccessTokenError`.
