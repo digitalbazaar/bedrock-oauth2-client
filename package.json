@@ -26,7 +26,8 @@
     "@digitalbazaar/http-client": "^1.2.0",
     "@digitalbazaar/lru-memoize": "^2.1.0",
     "bedrock-mongodb": "^8.3.0",
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "p-retry": "^4.6.1"
   },
   "peerDependencies": {
     "bedrock": "^4.1.1",
