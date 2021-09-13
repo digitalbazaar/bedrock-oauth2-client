@@ -3,8 +3,9 @@
 ## 2.1.0 - 2021-xx-xx
 
 ### Added
-- Added `onInit` parameter to `getAccessToken`. When true, it will continually
-  retry to get an access token.
+- Added `retryAndExitOnFailure` parameter to `getAccessToken`. When true, it
+  will continually retry to get an access token and exit if it encounters an
+  unrecoverable error.
 
 ## 2.0.0 - 2021-09-09
 
