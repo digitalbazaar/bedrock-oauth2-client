@@ -1,6 +1,6 @@
 # bedrock-oauth2-client ChangeLog
 
-## 2.1.0 - 2021-xx-xx
+## 2.1.0 - 2021-09-14
 
 ### Added
 - Added `retryAndExitOnFailure` parameter to `getAccessToken`. When true, it
