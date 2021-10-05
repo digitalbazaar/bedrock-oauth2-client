@@ -52,7 +52,7 @@ describe('oauth2-client', () => {
   it('should return true if an error contains "invalid_token"', async () => {
     const error = new Error('Invalid Token');
     error.status = 401;
-    error.data = {error: 'invalid_token'};
+    error.data = {error: 'invalid_token', name: 'ConstraintError'};
     const errorResult = isInvalidAccessTokenError({error});
     errorResult.should.eql(true);
   });
