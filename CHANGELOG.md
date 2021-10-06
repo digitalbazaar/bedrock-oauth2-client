@@ -6,7 +6,7 @@
 - **BREAKING**: Removed `OAuth2Client` class.
 
 ### Added
-- Added `authHttpClient` which returns an instance of `httpClient` with the  
+- Added `createAuthzHttpClient` which returns an instance of `httpClient` with the  
   `authorization` header populated.
 
 ## 2.1.0 - 2021-09-14
