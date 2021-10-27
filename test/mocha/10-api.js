@@ -3,7 +3,8 @@
  */
 
 const {
-  storage, isInvalidAccessTokenError, isUnrecoverableError, getAccessToken
+  storage, isInvalidAccessTokenError, isUnrecoverableError, getAccessToken,
+  createAuthzHttpClient
 } = require('bedrock-oauth2-client');
 const {oAuth2Payload} = require('./mock-data.js');
 
@@ -116,5 +117,12 @@ describe('oauth2-client', () => {
     }
     should.not.exist(result);
     err.message.should.equal('"token_endpoint" is required.');
+  });
+  it('should return an authzHttpClient', async () => {
+    const payload = JSON.parse(JSON.stringify(oAuth2Payload));
+    const authzHttpClient =
+      await createAuthzHttpClient({oAuth2Client: payload});
+    should.exist(authzHttpClient);
+    authzHttpClient.should.be.a('function');
   });
 });
