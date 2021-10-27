@@ -3,8 +3,9 @@
  */
 
 const {
-  storage, isInvalidAccessTokenError, isUnrecoverableError
+  storage, isInvalidAccessTokenError, isUnrecoverableError, getAccessToken
 } = require('bedrock-oauth2-client');
+const {oAuth2Payload} = require('./mock-data.js');
 
 describe('oauth2-client', () => {
   it('should insert an item into the database', async () => {
@@ -76,5 +77,44 @@ describe('oauth2-client', () => {
     error.data = {error: 'invalid_token', name: 'ConstraintError'};
     const errorResult = isUnrecoverableError({error});
     errorResult.should.eql(false);
+  });
+  it('should throw error with no client_id', async () => {
+    const payload = JSON.parse(JSON.stringify(oAuth2Payload));
+    delete payload.client_id;
+    let result;
+    let err;
+    try {
+      result = await getAccessToken({...payload});
+    } catch(e) {
+      err = e;
+    }
+    should.not.exist(result);
+    err.message.should.equal('"client_id" is required.');
+  });
+  it('should throw error with no client_secret', async () => {
+    const payload = JSON.parse(JSON.stringify(oAuth2Payload));
+    delete payload.client_secret;
+    let result;
+    let err;
+    try {
+      result = await getAccessToken({...payload});
+    } catch(e) {
+      err = e;
+    }
+    should.not.exist(result);
+    err.message.should.equal('"client_secret" is required.');
+  });
+  it('should throw error with no token_endpoint', async () => {
+    const payload = JSON.parse(JSON.stringify(oAuth2Payload));
+    delete payload.token_endpoint;
+    let result;
+    let err;
+    try {
+      result = await getAccessToken({...payload});
+    } catch(e) {
+      err = e;
+    }
+    should.not.exist(result);
+    err.message.should.equal('"token_endpoint" is required.');
   });
 });
