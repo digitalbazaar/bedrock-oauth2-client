@@ -141,4 +141,22 @@ describe('oauth2-client', () => {
     result.status.should.eql(200);
     result.data.response.should.eql('success');
   });
+  it('should error with incorrect access token', async () => {
+    const payload = JSON.parse(JSON.stringify(oAuth2Payload));
+    const authzHttpClient =
+      await createAuthzHttpClient({oAuth2Client: payload});
+    should.exist(authzHttpClient);
+    authzHttpClient.should.be.a('function');
+    let result;
+    let err;
+    try {
+      result = await authzHttpClient.get('http://www.test.com/geterrortest',
+        {});
+    } catch(e) {
+      err = e;
+    }
+    should.exist(err);
+    should.not.exist(result);
+    err.code.should.eql('ERR_NOCK_NO_MATCH');
+  });
 });
