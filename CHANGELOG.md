@@ -8,6 +8,7 @@
 ### Added
 - Added `createAuthzHttpClient` which returns an instance of `httpClient` with the  
   `authorization` header populated.
+- Added additional tests for `authzHttpClient` and errors.
 
 ## 2.1.0 - 2021-09-14
 
