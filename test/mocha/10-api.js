@@ -1,12 +1,11 @@
 /*
  * Copyright (c) 2021 Digital Bazaar, Inc. All rights reserved.
  */
-
+const {oAuth2Payload} = require('./mock-data.js');
 const {
   storage, isInvalidAccessTokenError, isUnrecoverableError, getAccessToken,
   createAuthzHttpClient
 } = require('bedrock-oauth2-client');
-const {oAuth2Payload} = require('./mock-data.js');
 
 describe('oauth2-client', () => {
   it('should insert an item into the database', async () => {
@@ -124,5 +123,22 @@ describe('oauth2-client', () => {
       await createAuthzHttpClient({oAuth2Client: payload});
     should.exist(authzHttpClient);
     authzHttpClient.should.be.a('function');
+  });
+  it('should successfully get a response using authzHttpClient', async () => {
+    const payload = JSON.parse(JSON.stringify(oAuth2Payload));
+    const authzHttpClient =
+      await createAuthzHttpClient({oAuth2Client: payload});
+    should.exist(authzHttpClient);
+    authzHttpClient.should.be.a('function');
+    let result;
+    let err;
+    try {
+      result = await authzHttpClient.get('http://www.test.com/gettest', {});
+    } catch(e) {
+      err = e;
+    }
+    should.not.exist(err);
+    result.status.should.eql(200);
+    result.data.response.should.eql('success');
   });
 });

@@ -9,4 +9,5 @@ require('bedrock-mongodb');
 require('bedrock-oauth2-client');
 
 require('bedrock-test');
+require('./mocha/nock');
 bedrock.start();
