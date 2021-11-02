@@ -89,7 +89,7 @@ describe('oauth2-client', () => {
       err = e;
     }
     should.not.exist(result);
-    err.message.should.equal('"client_id" is must be a string.');
+    err.message.should.equal('"client_id" must be a string.');
   });
   it('should throw error with no client_secret', async () => {
     const payload = JSON.parse(JSON.stringify(oAuth2Payload));
