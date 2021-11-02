@@ -89,7 +89,7 @@ describe('oauth2-client', () => {
       err = e;
     }
     should.not.exist(result);
-    err.message.should.equal('"client_id" is required.');
+    err.message.should.equal('"client_id" is must be a string.');
   });
   it('should throw error with no client_secret', async () => {
     const payload = JSON.parse(JSON.stringify(oAuth2Payload));
@@ -102,7 +102,7 @@ describe('oauth2-client', () => {
       err = e;
     }
     should.not.exist(result);
-    err.message.should.equal('"client_secret" is required.');
+    err.message.should.equal('"client_secret" must be a string.');
   });
   it('should throw error with no token_endpoint', async () => {
     const payload = JSON.parse(JSON.stringify(oAuth2Payload));
@@ -115,7 +115,7 @@ describe('oauth2-client', () => {
       err = e;
     }
     should.not.exist(result);
-    err.message.should.equal('"token_endpoint" is required.');
+    err.message.should.equal('"token_endpoint" must be a string.');
   });
   it('should return an authzHttpClient', async () => {
     const payload = JSON.parse(JSON.stringify(oAuth2Payload));
