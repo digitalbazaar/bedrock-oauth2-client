@@ -1,6 +1,6 @@
 {
   "name": "bedrock-oauth2-client",
-  "version": "2.1.1-0",
+  "version": "3.0.0",
   "description": "Bedrock OAuth2 Client",
   "main": "./lib",
   "scripts": {
