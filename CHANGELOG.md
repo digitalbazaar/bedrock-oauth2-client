@@ -1,6 +1,6 @@
 # bedrock-oauth2-client ChangeLog
 
-## 3.0.0 - 2021-xx-xx
+## 3.0.0 - 2021-11-03
 
 ### Removed
 - **BREAKING**: Removed `OAuth2Client` class.
