@@ -1,5 +1,10 @@
 # bedrock-oauth2-client ChangeLog
 
+## 3.0.1 - 2021-xx-xx
+
+### Added
+- Added check for `error.data` in error check functions.
+
 ## 3.0.0 - 2021-11-03
 
 ### Removed
