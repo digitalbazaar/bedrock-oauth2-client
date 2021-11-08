@@ -1,6 +1,6 @@
 # bedrock-oauth2-client ChangeLog
 
-## 3.0.1 - 2021-xx-xx
+## 3.0.1 - 2021-11-08
 
 ### Added
 - Added check for `error.data` in error check functions.
@@ -11,7 +11,7 @@
 - **BREAKING**: Removed `OAuth2Client` class.
 
 ### Added
-- Added `createAuthzHttpClient` which returns an instance of `httpClient` with the  
+- Added `createAuthzHttpClient` which returns an instance of `httpClient` with the
   `authorization` header populated.
 - Added additional tests for `authzHttpClient` and errors.
 
