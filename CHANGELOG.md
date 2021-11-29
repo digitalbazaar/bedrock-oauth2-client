@@ -3,7 +3,7 @@
 ## 3.0.2 - 2021-11-29
 
 ### Added
-- Added check for `options` in `authzHttpClient`.
+- Update `options` and `url` in `authzHttpClient`.
 
 ## 3.0.1 - 2021-11-08
 
