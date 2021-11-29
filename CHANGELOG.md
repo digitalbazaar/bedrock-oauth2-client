@@ -1,5 +1,10 @@
 # bedrock-oauth2-client ChangeLog
 
+## 3.0.3 - 2021-xx-xx
+
+### Changed
+- Simplify `options` and `url` in `authzHttpClient`.
+
 ## 3.0.2 - 2021-11-29
 
 ### Added
