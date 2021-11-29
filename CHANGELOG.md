@@ -1,6 +1,6 @@
 # bedrock-oauth2-client ChangeLog
 
-## 3.0.2 - 2021-xx-xx
+## 3.0.2 - 2021-11-29
 
 ### Added
 - Added check for `options` in `authzHttpClient`.
