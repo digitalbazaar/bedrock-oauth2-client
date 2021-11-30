@@ -1,5 +1,11 @@
 # bedrock-oauth2-client ChangeLog
 
+## 3.1.0 - TBD
+
+### Added
+- Added optional `explain` param to get more details about database performance.
+- Added database tests in order to check database performance.
+
 ## 3.0.3 - 2021-11-29
 
 ### Changed

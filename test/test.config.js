@@ -7,7 +7,7 @@ const {config} = require('bedrock');
 const path = require('path');
 
 // MongoDB
-config.mongodb.name = 'bedrock-oauth2-client';
+config.mongodb.name = 'bedrock_oauth2_client_test';
 config.mongodb.host = 'localhost';
 config.mongodb.port = 27017;
 // drop all collections on initialization
