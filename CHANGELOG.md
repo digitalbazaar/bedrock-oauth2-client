@@ -1,5 +1,10 @@
 # bedrock-oauth2-client ChangeLog
 
+## 4.0.0 - 2021-xx-xx
+
+### Removed
+- **BREAKING**: Removed database storage.
+
 ## 3.1.0 - 2021-11-30
 
 ### Added
