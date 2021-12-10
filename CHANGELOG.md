@@ -3,7 +3,11 @@
 ## 4.0.0 - 2021-xx-xx
 
 ### Removed
-- **BREAKING**: Removed database storage.
+- **BREAKING**: Remove database storage.
+
+### Changed
+- **BREAKING**: Update `getAccessToken` and `getNewAccessToken` to return object with
+  `accessToken` property.
 
 ## 3.1.0 - 2021-11-30
 
