@@ -1,6 +1,6 @@
 # bedrock-oauth2-client ChangeLog
 
-## 4.0.1 - 2022-02-xx
+## 4.0.1 - 2022-02-23
 
 ### Fixed
 - Exit with error code `1` on unrecoverable error instead of doing
