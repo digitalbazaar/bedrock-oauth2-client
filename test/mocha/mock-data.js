@@ -1,8 +1,7 @@
 /*!
- * Copyright (c) 2021 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2021-2022 Digital Bazaar, Inc. All rights reserved.
  */
-
-exports.oAuth2Payload = {
+export const oAuth2Payload = {
   client_id: '123',
   client_secret: '456',
   token_endpoint: 'http://www.test.com/token',
@@ -10,14 +9,14 @@ exports.oAuth2Payload = {
   scope: ['meter']
 };
 
-exports.mockToken1 = {
+export const mockToken1 = {
   client_id: '123',
   client_secret: 'abc',
   token_endpoint: 'http://www.test.com/token',
   access_token: '123abc'
 };
 
-exports.mockToken2 = {
+export const mockToken2 = {
   client_id: '234',
   client_secret: 'bcd',
   token_endpoint: 'http://www.test.com/token',

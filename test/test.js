@@ -1,13 +1,11 @@
-/*
- * Copyright (c) 2021 Digital Bazaar, Inc. All rights reserved.
+/*!
+ * Copyright (c) 2021-2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+import * as bedrock from '@bedrock/core';
+import '@bedrock/https-agent';
+import '@bedrock/mongodb';
+import '@bedrock/oauth2-client';
 
-const bedrock = require('bedrock');
-require('bedrock-https-agent');
-require('bedrock-mongodb');
-require('bedrock-oauth2-client');
-
-require('bedrock-test');
-require('./mocha/nock');
+import '@bedrock/test';
+import './mocha/nock.js';
 bedrock.start();
