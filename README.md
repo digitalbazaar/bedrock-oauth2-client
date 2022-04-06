@@ -29,14 +29,14 @@ TBD
 
 ## Install
 
-- Node.js 12+ is required.
+- Node.js 14+ is required.
 
 ### NPM
 
 To install via NPM:
 
 ```
-npm install --save bedrock-oauth2-client
+npm install --save @bedrock/oauth2-client
 ```
 
 ### Development
@@ -56,7 +56,7 @@ npm install
 Create a `configs/authorization.js` config file. For example:
 
 ```js
-import bedrock from 'bedrock';
+import * as bedrock from '@bedrock/core';
 const {config} = bedrock;
 
 config['your-bedrock-project'].authorization = [{
@@ -94,22 +94,22 @@ if(!process.env.CI) {
 
 ### On Access Token Expiration/Revocation
 
-Fetching a new access token on server startup (and re-authorizing another access token when the LRU Cache expires) 
-should prevent tokens from expiring. However, there are other events beyond the client control -- 
-issuer keys being rotated, scopes being changed or revoked, etc. For these cases, you also need automated logic that 
+Fetching a new access token on server startup (and re-authorizing another access token when the LRU Cache expires)
+should prevent tokens from expiring. However, there are other events beyond the client control --
+issuer keys being rotated, scopes being changed or revoked, etc. For these cases, you also need automated logic that
 tries to refresh an access token if it encounters an appropriate error.
 
 ### When to Retry
 
-If `error` is `invalid_token` AND `name` is `ConstraintError` (this covers Expired, Revoked, and Issuer Key Rotated 
-cases), check to see if max number of retries is exceeded (for that issuer). If not, retry the authorization flow and 
+If `error` is `invalid_token` AND `name` is `ConstraintError` (this covers Expired, Revoked, and Issuer Key Rotated
+cases), check to see if max number of retries is exceeded (for that issuer). If not, retry the authorization flow and
 fetch another access token.
 
-If `name` is `DataError` or on any other error encountered during authorization flow -- do not retry. Continue throwing 
+If `name` is `DataError` or on any other error encountered during authorization flow -- do not retry. Continue throwing
 a `503 Service Unavailable` error any time an access token is required for this issuer.
 
 ## Expanded Errors
-Example OAuth 2 error response (the `error`, `error_description` and `error_uri` fields are dictated by the OAuth 2.0 
+Example OAuth 2 error response (the `error`, `error_description` and `error_uri` fields are dictated by the OAuth 2.0
 spec, and the `name` property is Bedrock-specific):
 
 ```
@@ -117,7 +117,7 @@ HTTP/1.1 401 Unauthorized
 WWW-Authenticate: Bearer error="invalid_token"
   error_description="The access token expired"
 Content-type: application/json
- 
+
 {
   "error": "invalid_token",
   "error_description": "The access token expired",

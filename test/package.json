@@ -1,32 +1,33 @@
 {
   "name": "bedrock-oauth2-client-test",
   "version": "0.0.1-0",
+  "type": "module",
   "private": true,
   "scripts": {
     "test": "node --preserve-symlinks test.js test",
-    "coverage": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-summary npm test",
-    "coverage-ci": "cross-env NODE_ENV=test nyc --reporter=lcovonly npm test",
-    "coverage-report": "nyc report"
+    "coverage": "cross-env NODE_ENV=test c8 --reporter=lcov --reporter=text-summary npm test",
+    "coverage-ci": "cross-env NODE_ENV=test c8 --reporter=lcovonly npm test",
+    "coverage-report": "c8 report"
   },
   "dependencies": {
-    "bedrock": "^4.1.1",
-    "bedrock-express": "^3.2.0",
-    "bedrock-https-agent": "^2.0.0",
-    "bedrock-mongodb": "^8.2.0",
-    "bedrock-oauth2-client": "file:..",
-    "bedrock-server": "^2.7.0",
-    "bedrock-test": "^5.3.2",
+    "@bedrock/core": "^5.0.0",
+    "@bedrock/express": "^4.0.0",
+    "@bedrock/https-agent": "^3.0.0",
+    "@bedrock/mongodb": "^9.0.0",
+    "@bedrock/oauth2-client": "file:..",
+    "@bedrock/server": "^4.0.0",
+    "@bedrock/test": "^6.0.0",
+    "c8": "^7.11.0",
     "cross-env": "^7.0.3",
-    "nock": "^13.1.4",
-    "nyc": "^15.1.0"
+    "nock": "^13.1.4"
   },
-  "nyc": {
+  "c8": {
     "excludeNodeModules": false,
     "include": [
-      "node_modules/bedrock-oauth2-client-http/**"
+      "node_modules/@bedrock/oauth2-client-http/**"
     ],
     "exclude": [
-      "node_modules/bedrock-oauth2-client-http/node_modules/**"
+      "node_modules/@bedrock/oauth2-client-http/node_modules/**"
     ]
   }
 }

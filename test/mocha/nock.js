@@ -1,9 +1,7 @@
-/*
- * Copyright (c) 2021 Digital Bazaar, Inc. All rights reserved.
+/*!
+ * Copyright (c) 2021-2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const nock = require('nock');
+import nock from 'nock';
 
 nock('http://www.test.com')
   .post('/token')

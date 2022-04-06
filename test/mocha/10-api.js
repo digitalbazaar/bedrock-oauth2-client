@@ -1,11 +1,11 @@
-/*
- * Copyright (c) 2021 Digital Bazaar, Inc. All rights reserved.
+/*!
+ * Copyright (c) 2021-2022 Digital Bazaar, Inc. All rights reserved.
  */
-const {oAuth2Payload} = require('./mock-data.js');
-const {
+import {oAuth2Payload} from './mock-data.js';
+import {
   isInvalidAccessTokenError, isUnrecoverableError, getAccessToken,
   createAuthzHttpClient
-} = require('bedrock-oauth2-client');
+} from '@bedrock/oauth2-client';
 
 describe('oauth2-client', () => {
   it('should return true if an error contains "invalid_token"', async () => {

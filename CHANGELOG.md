@@ -1,5 +1,13 @@
 # bedrock-oauth2-client ChangeLog
 
+## 5.0.0 - 2022-04-xx
+
+### Changed
+- **BREAKING**: Rename package to `@bedrock/oauth2-client`.
+- **BREAKING**: Convert to module (ESM).
+- **BREAKING**: Remove default export.
+- **BREAKING**: Require node 14.x.
+
 ## 4.0.1 - 2022-02-23
 
 ### Fixed
