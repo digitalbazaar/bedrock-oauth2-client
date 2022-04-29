@@ -1,6 +1,6 @@
 # bedrock-oauth2-client ChangeLog
 
-## 6.0.0 - 2022-04-xx
+## 6.0.0 - 2022-04-29
 
 ### Changed
 - **BREAKING**: Update peer deps:
