@@ -1,5 +1,13 @@
 # bedrock-oauth2-client ChangeLog
 
+## 6.0.0 - 2022-04-xx
+
+### Changed
+- **BREAKING**: Update peer deps:
+  - `@bedrock/core@6`
+  - `@bedrock/express@8`
+  - `@bedrock/https-agent@4`.
+
 ## 5.0.0 - 2022-04-06
 
 ### Changed
