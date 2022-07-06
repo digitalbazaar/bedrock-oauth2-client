@@ -99,6 +99,31 @@ describe('oauth2-client', () => {
     result.status.should.eql(200);
     result.data.response.should.eql('success');
   });
+  it('should handle error connection refused using authzHttpClient',
+    async () => {
+      const payload = JSON.parse(JSON.stringify(oAuth2Payload));
+      const authzHttpClient =
+        await createAuthzHttpClient({oAuth2Client: payload});
+      should.exist(authzHttpClient);
+      authzHttpClient.should.be.a('function');
+      let result;
+      let err;
+      try {
+        result = await authzHttpClient.get('https://localhost:65535', {});
+      } catch(e) {
+        err = e;
+      }
+      should.exist(err, 'Expected request to error.');
+      should.not.exist(result, 'Expected no result.');
+      const expectedErrorCode = 'ECONNREFUSED';
+      // node 18's global fetch seems to be changing the error return type
+      const cause = err.cause || err;
+      cause.code.should.equal(
+        expectedErrorCode,
+        `Expected nonExistentResource "err.code" to be ${expectedErrorCode}.`
+      );
+    });
+
   it('should error with incorrect access token', async () => {
     const payload = JSON.parse(JSON.stringify(oAuth2Payload));
     const authzHttpClient =
