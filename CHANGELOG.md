@@ -1,5 +1,10 @@
 # bedrock-oauth2-client ChangeLog
 
+## 6.0.1 - 2022-08-xx
+
+### Fixed
+- Update internal dependencies.
+
 ## 6.0.0 - 2022-04-29
 
 ### Changed
