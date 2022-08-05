@@ -25,7 +25,7 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-oauth2-client",
   "dependencies": {
     "@digitalbazaar/http-client": "^3.0.1",
-    "@digitalbazaar/lru-memoize": "^2.2.0",
+    "@digitalbazaar/lru-memoize": "^3.0.0",
     "p-retry": "^4.6.1"
   },
   "peerDependencies": {
