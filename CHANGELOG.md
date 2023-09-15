@@ -5,6 +5,7 @@
 ### Changed
 - **BREAKING**: Drop support for Node.js < 18.
 - Use `@digitalbazaar/http-client@4`. This version requires Node.js 18+.
+- Use `p-retry@6`. This version requires Node.js 16+.
 
 ## 6.0.1 - 2022-08-05
 
