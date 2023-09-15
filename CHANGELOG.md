@@ -1,5 +1,11 @@
 # bedrock-oauth2-client ChangeLog
 
+## 7.0.0 - 2023-09-xx
+
+### Changed
+- **BREAKING**: Drop support for Node.js < 18.
+- Use `@digitalbazaar/http-client@4`. This version requires Node.js 18+.
+
 ## 6.0.1 - 2022-08-05
 
 ### Fixed
