@@ -91,7 +91,7 @@ describe('oauth2-client', () => {
     let result;
     let err;
     try {
-      result = await authzHttpClient.get('http://www.test.com/gettest', {});
+      result = await authzHttpClient.get('https://localhost:18443/gettest', {});
     } catch(e) {
       err = e;
     }
@@ -108,13 +108,14 @@ describe('oauth2-client', () => {
     let result;
     let err;
     try {
-      result = await authzHttpClient.get('http://www.test.com/geterrortest',
-        {});
+      result = await authzHttpClient.get(
+        'https://localhost:18443/geterrortest', {});
     } catch(e) {
       err = e;
     }
     should.exist(err);
     should.not.exist(result);
-    err.code.should.eql('ERR_NOCK_NO_MATCH');
+    err.message.should.equal('Request failed with status code 403 Forbidden');
+    err.status.should.equal(403);
   });
 });

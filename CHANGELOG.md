@@ -6,6 +6,8 @@
 - **BREAKING**: Drop support for Node.js < 18.
 - Use `@digitalbazaar/http-client@4`. This version requires Node.js 18+.
 - Use `p-retry@6`. This version requires Node.js 16+.
+- Remove use of `nock` in the test suite. It is currently not compatible with
+  the Node.js `fetch` API.
 
 ## 6.0.1 - 2022-08-05
 
