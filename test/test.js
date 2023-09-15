@@ -5,7 +5,10 @@ import * as bedrock from '@bedrock/core';
 import '@bedrock/https-agent';
 import '@bedrock/mongodb';
 import '@bedrock/oauth2-client';
+import '@bedrock/express';
 
 import '@bedrock/test';
-import './mocha/nock.js';
+
+import './http.js';
+
 bedrock.start();
