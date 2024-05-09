@@ -16,11 +16,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {oAuth2Payload} from './mock-data.js';
 import {
-  isInvalidAccessTokenError, isUnrecoverableError, getAccessToken,
-  createAuthzHttpClient
+  createAuthzHttpClient, getAccessToken, isInvalidAccessTokenError,
+  isUnrecoverableError
 } from '@bedrock/oauth2-client';
+import {oAuth2Payload} from './mock-data.js';
 
 describe('oauth2-client', () => {
   it('should return true if an error contains "invalid_token"', async () => {
