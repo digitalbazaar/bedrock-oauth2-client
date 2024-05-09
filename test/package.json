@@ -13,7 +13,7 @@
     "@bedrock/core": "^6.0.0",
     "@bedrock/express": "^8.0.0",
     "@bedrock/https-agent": "^4.0.0",
-    "@bedrock/mongodb": "^10.0.0",
+    "@bedrock/mongodb": "github:digitalbazaar/bedrock-mongodb#mongo-driver-4-rc",
     "@bedrock/oauth2-client": "file:..",
     "@bedrock/server": "^5.0.0",
     "@bedrock/test": "^8.0.0",
