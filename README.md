@@ -149,4 +149,4 @@ Digital Bazaar: support@digitalbazaar.com
 
 ## License
 
-[Bedrock Non-Commercial License v1.0](LICENSE.md) © Digital Bazaar
+[Apache-2.0](LICENSE) © Digital Bazaar
