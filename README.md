@@ -1,7 +1,7 @@
-# Bedrock OAuth 2.0 Client _(bedrock-oauth2-client)_
+# Bedrock OAuth 2.0 Client _(@bedrock/oauth2-client)_
 
-[![Build Status](https://img.shields.io/github/workflow/status/digitalbazaar/bedrock-oauth2-client/Bedrock%20Node.js%20CI)](https://github.com/digitalbazaar/bedrock-oauth2-client/actions?query=workflow%3A%22Bedrock+Node.js+CI%22)
-[![NPM Version](https://img.shields.io/npm/v/bedrock-oauth2-client.svg)](https://npm.im/bedrock-oauth2-client)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/digitalbazaar/bedrock-oauth2-client/main.yml)](https://github.com/digitalbazaar/bedrock-oauth2-client/actions/workflows/main.yml)
+[![NPM Version](https://img.shields.io/npm/v/@bedrock/oauth2-client.svg)](https://npm.im/@bedrock/oauth2-client)
 
 > A bedrock module that creates and manages an OAuth2 client, that will make it easy to make http-client API calls to OAuth2-protected endpoints.
 
