@@ -1,6 +1,6 @@
 # bedrock-oauth2-client ChangeLog
 
-## 7.1.0 - 2024-05-xx
+## 7.1.0 - 2024-05-09
 
 ### Changed
 - Relicense under the Apache-2.0 license.
