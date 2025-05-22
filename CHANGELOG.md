@@ -1,6 +1,6 @@
 # bedrock-oauth2-client ChangeLog
 
-## 7.2.0 - 2024-05-dd
+## 7.2.0 - 2024-05-22
 
 ### Changed
 - Use `@digitalbazaar/lru-memoize@4`. Existing cache defaults and options
