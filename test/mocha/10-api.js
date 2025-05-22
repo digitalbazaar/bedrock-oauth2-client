@@ -130,7 +130,9 @@ describe('oauth2-client', () => {
     }
     should.exist(err);
     should.not.exist(result);
-    err.message.should.equal('Request failed with status code 403 Forbidden');
+    err.message.should.equal(
+      'Request failed with status code 403 Forbidden: ' +
+      'GET https://localhost:18443/geterrortest');
     err.status.should.equal(403);
   });
 });
